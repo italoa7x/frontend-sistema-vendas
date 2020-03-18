@@ -1,0 +1,28 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="container">
+    <h3>Usuários cadastrados</h3>
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Senha</th>
+            <th class="text-center">Ações</th>
+        </tr>
+    </thead>
+            <tr *ngFor="let u of listarUsuarios()">
+                <td>{{u.nome}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.senha}}</td>
+                <td class="text-center"><a class='btn btn-info btn-xs' (click)="editarUsuario(u.id)">
+                <span class="glyphicon glyphicon-edit"></span>Editar</a> 
+                <a href="#" class="btn btn-danger btn-xs" (click)= "excluir(u.id)">
+                <span class="glyphicon glyphicon-remove"></span>Excluir</a></td>
+            </tr>
+    </table>
+    </div>
+</div>
