@@ -10,7 +10,7 @@ import { Usuario } from 'src/app/model/Usuario';
 
 export class UsuarioService {
   
-  URL_BASE = "http://localhost:8080/usuario";
+  private readonly URL_BASE = "http://localhost:8080/usuario";
   usuarios = [{
     id: 1,
     "nome": "italo",
@@ -21,7 +21,23 @@ export class UsuarioService {
     "nome": "Ana",
     "email":"ana@hotmail.com",
     "senha":"ana123"
+  },{
+    id: 3,
+    "nome": "Carla",
+    "email":"carla@hotmail.com",
+    "senha":"102301231"
+  },{
+    id: 4,
+    "nome": "José",
+    "email":"jo.se@hotmail.com",
+    "senha":"jose1239901"
+  },{
+    id: 5,
+    "nome": "Jubileu",
+    "email":"ju.bi@hotmail.com",
+    "senha":"ju132bi"
   }
+  
   ]
 
   constructor(private httpClient: HttpClient) { }
@@ -35,14 +51,8 @@ export class UsuarioService {
   }
 
   listarUsuario(){
+    //return this.httpClient.get<Usuario[]>(this.URL_BASE + "/listar");
     return this.usuarios;
   }
 
-  editarUsuario(id){
-    
-  }
-
-  excluir(id){
-
-  }
 }

@@ -1,28 +1,41 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <div class="container">
-    <h3>Usuários cadastrados</h3>
-    <div class="row col-md-6 col-md-offset-2 custyle">
-    <table class="table table-striped custab">
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Senha</th>
-            <th class="text-center">Ações</th>
-        </tr>
-    </thead>
-            <tr *ngFor="let u of listarUsuarios()">
-                <td>{{u.nome}}</td>
-                <td>{{u.email}}</td>
-                <td>{{u.senha}}</td>
-                <td class="text-center"><a class='btn btn-info btn-xs' (click)="editarUsuario(u.id)">
-                <span class="glyphicon glyphicon-edit"></span>Editar</a> 
-                <a href="#" class="btn btn-danger btn-xs" (click)= "excluir(u.id)">
-                <span class="glyphicon glyphicon-remove"></span>Excluir</a></td>
-            </tr>
-    </table>
-    </div>
-</div>
+        <div class="table-wrapper">
+            <div class="table-title">
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Registro</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Senha</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                    <tbody *ngFor="let usuario of usuarios">
+                        <tr>
+                            <td>{{usuario.id}}</td>
+                            <td>{{usuario.nome}}</td>
+                            <td>{{usuario.email}}</td>
+                            <td>{{usuario.senha}}</td>
+                            <td>
+                                <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons"></i></a>
+                                <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons"></i></a>
+                                <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
+                            </td>
+                        </tr>     
+                    </tbody>
+            </table>
+        </div>
+    </div>    

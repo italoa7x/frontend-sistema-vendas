@@ -13,17 +13,8 @@ export class ListarUsuariosComponent implements OnInit {
   usuarios: Usuario[];
   
   ngOnInit(): void {
+    this.usuarios = this.usuarioService.listarUsuario();
   }
 
-  listarUsuarios(){
-    return this.usuarioService.listarUsuario();
-  }
-
-  editarUsuario(id){
-    console.log("ID clicado: " + id);
-    return this.usuarioService.editarUsuario(id);
-  }
-  excluir(id){
-    return this.usuarioService.excluir(id);
-  }
+ 
 }
