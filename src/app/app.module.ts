@@ -1,4 +1,5 @@
 import { routing } from './app.routing';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CadastroComponent} from './components/usuario/cadastro-usuario/cadastro.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,7 +18,8 @@ import { LoginComponent } from './components/usuario/login/login.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    routing
+    routing,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

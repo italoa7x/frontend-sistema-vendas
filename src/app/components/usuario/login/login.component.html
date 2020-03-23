@@ -2,15 +2,16 @@
         <div class="card card-container">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img" class="profile-img-card" src="assets/imgs/logo.png" />
-            <h2>Litas Informática</h2>
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin">
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email" required focus>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Senha">
                 
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Logar</button>
-                <button class="btn btn-lg btn-primary btn-block btn-signin"  type="submit">Criar conta</button>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit"
+                (click)="telaCadastro()"
+                >Cadastrar</button>
             </form><!-- /form -->
             
         </div><!-- /card-container -->

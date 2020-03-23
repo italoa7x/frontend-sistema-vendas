@@ -1,25 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Usuario } from 'src/app/model/Usuario';
 import { UsuarioService } from '../services/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css']
 })
-export class CadastroComponent implements OnInit {
+export class CadastroComponent implements OnInit { 
 
-  constructor(private cadastroService: UsuarioService) { }
+  usuario: Usuario = {
+    id: 0,
+    nome: '',
+    email: '',
+    senha: ''
+  }
+
+  
+  constructor(private cadastroService: UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  cadastrar(nome: string, email: string, senha: string){
-    const user = new Usuario(1, nome, email, senha);
-    this.cadastroService.salvarUsuario(user).subscribe();
+  cadastrar(){
+    console.log(this.usuario)
   }
 
-  voltarTelaLogin(){
-
+  // retorna da tela de cadastro para a tela de login
+  retornarTelaLogin(){
+    this.router.navigate(['login'])
   }
+
 }
