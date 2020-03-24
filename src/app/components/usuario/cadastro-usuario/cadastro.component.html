@@ -4,11 +4,13 @@
             <img id="profile-img" class="profile-img-card" src="assets/imgs/add.png" />
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin">
-                <span id="reauth-email" class="reauth-email"></span>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Senha">
+                <span id="reauth-email" class="reauth-email"></span>                
+                <input type="email" id="inputNome" class="form-control" placeholder="Nome" [(ngModel)]=usuario.nome>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email" [(ngModel)]=usuario.email>
+                <input type="password" id="inputSenha" class="form-control" placeholder="Senha" [(ngModel)]=usuario.senha>
                 
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Finalizar</button>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit"
+                (click)="cadastrar()">Finalizar</button>
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit"
                 (click)="retornarTelaLogin()">Retornar</button>
             </form><!-- /form -->
